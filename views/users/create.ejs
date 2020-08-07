@@ -1,0 +1,50 @@
+<%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/navbar')%>
+
+    <div class="container">
+
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Registre-se</h2>
+            </div>
+            <div class="card-body">
+                <form class="form-register" action="/users/create" method="POST">
+                    <div>
+                        <label>Nome</label>
+                        <input class="form-control" type="text" placeholder="Digite seu nome" name="name">
+                        <label>Senha</label>
+                        <input class="form-control" type="password" placeholder="Digite uma senha" name="password" minlength="8">
+                        <label>Confirme a senha</label>
+                        <input class="form-control" type="password" placeholder="Confirme a senha" minlength="8">
+
+
+                    </div>
+                    <div>
+                        <label>Sexo</label>
+                        <select class="form-control" name="sex">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                        <label>Email</label>
+                        <input class="form-control" type="email" placeholder="Digite um email válido" name="email">
+
+                        <label>Data de nascimento</label>
+                        <input class="form-control" type="date" name="birth">
+
+                    </div>
+
+                    <button class="btn" type="submit">Cadastrar</button>
+
+                    <div class="msg-erro">
+                        <p></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/script.js"></script>
+<%- include('../partials/footer')%>

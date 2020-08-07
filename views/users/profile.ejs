@@ -1,0 +1,82 @@
+<%- include('../partials/head')%>
+
+<body>
+    <%- include('../partials/navbar')%>
+    <div class="container">
+        <div class="card mt-5 card-profile">
+            <div class="card-body ">
+                <div class="container-image">
+                    <%if(user.avatar == undefined){%>
+
+                    <img src="data:image/jpeg;base64,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"
+                        alt="">
+                    <%} else{%>
+                    <img src="<%= user.avatar %>" alt="">
+                    <%}%>
+                </div>
+                <div class="painel-profile">
+                    <div class="">
+
+                        <h5><%=user.name%></h5>
+                    <%if(user.title == undefined){%>
+
+                    <%} else{%>
+                    <h5><%=user.title%></h5>
+                    <%}%>
+                        <span>Artigos:<%= user.articles.length%></span>
+                        <div class="icon">
+                            <a href="/users/profile/edit">
+                                <img src="/assets/edit.svg" alt="icone de edição">
+                            </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <%if(user.about != undefined){%>
+                    <h3>Sobre</h3>
+                    <p class="about-desc">
+                        <%= user.about%>
+                    </p>
+                    <%}else{%>
+                    <h3>Sobre</h3>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-articles mt-3">
+            <div class="icons">
+                <img src="/assets/grid.svg" alt="icone de grids">
+                <img src="/assets/rows.svg" alt="icone de linhas">
+            </div>
+            <div class="card">
+                <div class="card-body card-add">
+                    <a href="/users/articles/new">
+                        <img src="/assets/plus.svg" alt="icone de adição de artigos">
+                    </a>
+                </div>
+            </div>
+            <% user.articles.forEach(article=>{%>
+                    <div class="card">
+                        <div class="card-body">
+                            <%= article.title%>
+                        </div>
+                    </div>
+                    <%})%>
+
+                </div>
+            </div>
+            <script>
+                const icons = document.querySelectorAll('.icons img')
+                const container = document.querySelector('.container.container-articles')
+                icons[0].addEventListener('click', () => {
+
+
+                    container.classList.remove('dis-flex')
+
+                })
+                icons[1].addEventListener('click', () => {
+                    container.classList.add('dis-flex')
+                })
+            </script>
+</body>
+<%- include('../partials/footer')%>

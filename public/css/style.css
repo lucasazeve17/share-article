@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+
+body{
+    background-color: #EAEBEF;
+    font-family:  'Roboto', sans-serif;
+}
+nav{
+    background-color: #333;
+}
+
+.links{
+    text-align: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+.items-login a{
+    color: #fff;
+    background-color: #09d3e2de;
+    border-radius: 4px;
+    
+}
+.links a.bckchange{
+    background: #000000;
+    border: 1px solid #09D5E2;
+    border-radius: 4px;
+}
+.links a.bckchange:hover{
+    color: #09D5E2;
+}
+.links .items-login .user-logado{
+    
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+.links .items-login .user-logado img{
+
+   margin: 0 auto;
+   height: 100%;
+}
+.dropdown button{
+    border: 0;
+    background-color: #333;
+    margin-right: 64px;
+}
+
+.container.content-index{
+    max-width: 100%;
+    padding: 0;
+}
+.img-container{
+    height: 400px;
+}
+.img-container{
+   background-image: url('/assets/blank-business-composition-computer-373076.jpg');
+   background-position: top;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 400px;
+   margin: 0;
+}
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container a{
+    background-color: #333;
+    color: #09D5E2;
+    margin-left: 24px;
+}
+.img-container a:hover{
+    border:1px solid #09D5E2;
+    color: #09D5E2;
+}
+
+.about{
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.about .item-about{
+    text-align: center;
+}
+.about .item-about .image img{
+    height: 60px;
+    width: 60px;
+}
+.about .item-about p{
+    margin-top: 24px;
+}
+/* Página de registro */
+.form-register{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.form-register input + label,.form-register select + label ,.form-login input + label{
+    margin-top: 16px;
+}
+.form-register button,.form-login button{
+    margin-top: 32px;
+    background-color: #333;
+    border: 1px solid #09D5E2;
+    color: #fff;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.form-register button:hover{
+    color: #09D5E2;
+}
+.msg-erro{
+    margin-top: 8px;
+    font-weight: 500;
+    color: red;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0;
+    margin-left: 8px;
+}
+.password-v,.email-v{
+    display: none;
+}
+/* login */
+.container-login{
+    max-width: 500px;
+}
+.container-login .card-body{
+position: relative;
+}
+.op{
+    position: absolute;
+    bottom:28px;
+    right: 20px;
+}
+.op a{
+    font-size: 12px;
+    line-height: 22px;
+    color: #333;
+    font-weight: 400;
+}
+
+/* profile */
+.card-profile .card-body{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.card-profile .card-body .painel-profile{
+    position: relative;
+    background-color: #f9f9f9;
+    height: 220px;
+    border-radius: 8px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.card-profile .card-body .painel-profile div{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.card-profile .card-body .painel-profile div .icon img{
+    position: absolute;
+    height: 20px;
+    
+    top:16px;
+    right: 16px;
+    cursor: pointer;
+}
+.card-profile .card-body .painel-profile div span{
+    font-weight: 500;
+}
+.card-profile .card-body .painel-profile input{
+    padding: 8px;
+    max-width: 300px;
+}
+
+.card-profile .container-image{
+    height: 220px;
+    width: 250px;
+    padding: 0 25px;
+    align-items: center;
+    
+    border-radius: 50%;
+}
+.card-profile .container-image img{
+    border-radius: 50%;
+}
+.container.container-articles .card .card-body{
+    border-radius:8px;
+    text-align: center;
+    box-shadow: 2px 2px 5px #ccc;
+}
+.container.container-articles{
+    padding: 40px 16px;
+}
+.container.container-articles{
+    position: relative;
+    background-color: #fff;
+    min-height: 250px;
+    border-radius:8px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 180px;
+    gap: 10px;
+
+}
+.container.container-articles .icons{
+    width: auto;
+    position: absolute;
+    top: 8px;
+    right: 18px;
+}
+.container.container-articles .icons img{
+    cursor: pointer;
+}
+.container.container-articles.dis-flex{
+    display: flex;
+    flex-direction: column;
+}
+.card-body.card-add{
+    display: flex;
+    background-color: #eee;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    
+}
+.card-body.card-add img{
+    height: 56px;
+}
+/* Articles  */
+.card-part{
+}
+.card-part .card-body{
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    
+}
+.limitador-carach{
+    max-width: 25ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card-part .dd, .card-part .column img{
+    min-height: 246px;
+    /* max-height: 246px; */
+}
+.author-article{
+    display: flex;
+    width: 90%;
+    position: absolute;
+    justify-content: space-between;
+    max-height: 200px;
+    bottom: 8px;
+    align-items: center;
+}
+.author-article  img{
+    height: 40px;
+    width: 40px;
+    margin-right: 16px;
+    border-radius: 50%;
+}
+.author-article span{
+    background-color: #000000;
+    left: 0;
+    color:#09D5E2;
+}
+.author-article p{
+    margin-top:8px;
+    font-size: 16px;
+    color: #6C757D;
+}
+
+footer{
+    background-color: #ddd;
+    height: 48px;
+    padding: 16px;
+    font: 8px;
+    line-height: 18px;
+    text-align: center;
+}
+
+
+/* Responsividade */
+

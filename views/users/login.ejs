@@ -1,0 +1,28 @@
+<%- include('../partials/head')%>
+
+<body>
+
+    <%- include('../partials/navbar')%>
+
+    <div class="container container-login">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Login</h2>
+            </div>
+            <div class="card-body">
+                <form class="form-login" action="">
+                    <label>Email</label>
+                    <input class="form-control " type="email" name="email">
+                    <label>Senha</label>
+                    <input class="form-control" type="password" name="password">
+                    <button type="submit" class="btn">Entrar</button>
+                </form>
+                <div class="op">
+                    <a href="/users/register">Não possuo conta</a>
+                    <a href=#">| Esqueci minha senha</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('../partials/footer')%>

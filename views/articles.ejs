@@ -1,0 +1,40 @@
+<%- include('./partials/head')%>
+<body>
+    <%- include('./partials/navbar')%>
+  
+    <div class="container">
+        <% articles.forEach(article=>{%>
+        <div class="card mb-3 mt-5 card-part" >
+            <div class="row no-gutters">
+              <div class="col-md-4 column">
+                <%if(!article.coverImage){%>
+                  <img src="/assets/no-image-icon-23480.jpg" alt="" class="card-img">
+                  <%} else{%>
+                  <img src="<%= article.coverImage %>" alt="" class="card-img">
+                  <%}%>
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%= article.title%></h5>
+                  <p class="card-text limitador-carach"><%= article.body.slice(3,article.body.length-4) %></p>
+                  <p class="card-text"><small class="text-muted"></small></p>
+                  <div class="author-article">
+                        <span class="badge"><%= article.category.title%></span>
+                        <div class="d-flex"> 
+                          <img src="/assets/blank-business-composition-computer-373076.jpg" alt="">
+                          <p>Lucas Azevedo</p>                  
+                        </div>  
+                        
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%})%>
+        
+       
+    </div>
+    
+</body>
+<%- include('./partials/footer')%>

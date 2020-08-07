@@ -1,0 +1,63 @@
+<%- include('../partials/head')%>
+<body>
+    <%- include('../partials/navbar')%>
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Novo article</h2>
+            </div>
+            <div class="card-body">
+                <form action="/articles/create" method="POST">
+                    <label>Capa</label>
+                    <input class="form-control mb-3" type="text" name="coverImage" placeholder="URL Image">
+                    <label>Título</label>
+                    <input class="form-control mb-3" type="text" name="title">
+                    <textarea class="form-control" placeholder="Escreva seu texto aqui" name="body" id="article"></textarea>
+                    <label class="mt-2">Categoria</label>
+                    <select class="form-control" name="category">
+                        <% categories.forEach(category=>{ %>
+                        <option value="<%= category.id%>"><%= category.title %> </option>
+                        <%})%>
+                    </select>
+
+                    <button class="btn btn-primary mt-3" type="submit">Criar</button>
+                    <div class="msg-erro">
+                        
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/tinymce/tinymce.min.js"></script>
+    <script>
+        const form = document.querySelector('form')
+        const inputs = document.querySelectorAll('input')
+        const article = document.querySelector('textarea')
+        const select = document.querySelector('select')
+        const msgErro = document.querySelector('.msg-erro')
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+            // console.log
+            if(inputs[1].value === '' || article.value === '' || select ==='' ){
+                msgErro.innerHTML="Preencha os campos"
+            }else{
+                form.submit()
+            }
+        })
+
+
+
+
+        tinymce.init({
+            selector:'#article',
+            language:'pt_BR',
+            plugins:[
+            'advlist autolink link image  print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+            ]
+
+        })
+    </script>
+</body>
+<%- include('../partials/footer')%>
