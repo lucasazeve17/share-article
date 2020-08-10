@@ -3,6 +3,7 @@ const app = express()
 const routes = require('./routes')
 const methodOverRide = require('method-override')
 const connection = require('./database/database')
+const session = require('express-session')
 
 //database
 connection
@@ -14,7 +15,11 @@ connection
     })
 
 
-    
+app.use(session({
+    secret:'tiydaiydioa',
+    cookie:{maxAge:28800000}
+}))
+
 app.set('view engine', 'ejs')
 
 app.use(express.static('public'))

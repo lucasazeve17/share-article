@@ -241,6 +241,13 @@ position: relative;
 .card-body.card-add img{
     height: 56px;
 }
+.card-profile{
+    padding-bottom: 32px;
+    
+}
+.card-profile textarea{
+    max-height: 85px;
+}
 /* Articles  */
 .card-part{
 }
@@ -294,7 +301,17 @@ footer{
     line-height: 18px;
     text-align: center;
 }
-
-
+.dropdown-menu a{
+    background-color: #f9f9f9;
+    color: #333;
+}
+.article-btn {
+    color:#333;
+    background: #f9f9f9;
+}
+.dropdown a:hover{
+    text-decoration: none;
+    cursor: pointer;
+}
 /* Responsividade */
 

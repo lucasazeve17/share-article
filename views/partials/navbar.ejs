@@ -1,21 +1,26 @@
 <nav class="navbar navbar-dark">
     <a  href="/" class="navbar-brand mb-0 h1">ShareArticles</a>
     <div class="links d-flex">
-      <div class="dropdown navbar-brand">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categorias
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Tecnologia</a>
-          <a class="dropdown-item" href="#">Saúde e Fitness</a>
-          <a class="dropdown-item" href="#">Desenvolvimento pessoal</a>
-        </div>
-      </div>
+      
+        <a href="/articles" class="btn mr-3 article-btn">
+          Articles
+        </a>
+        
+      
       <div class="items-login">
         <%if(logado == true){%>
-          <a class="user-logado" href="#">
+          <!-- <a class="user-logado" href="#">
             <img src="/assets/user_icon.svg" alt="icone do usuario">
-          </a>
+          </a> -->
+          <div class="dropdown mr-3">
+            <a  class="dropdown-toggle user-logado"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="/assets/user_icon.svg" alt="icone do usuario">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" >
+              <a class="dropdown-item" href="/users/profile">Perfi</a>            
+              <a class="dropdown-item" href="/users/logout">Logout</a>
+            </div>
+          </div>
         <%}else{%>
         <a class="btn" href="/users/login">Login</a>
         <a class="btn bckchange" href="/users/register">Register</a> 

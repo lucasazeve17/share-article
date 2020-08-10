@@ -1,4 +1,5 @@
 <%- include('../partials/head')%>
+
 <body>
     <%- include('../partials/navbar')%>
     <div class="container">
@@ -9,22 +10,26 @@
             <div class="card-body">
                 <form action="/articles/update?_method=Put" method="POST">
                     <label>Capa</label>
-                    <input class="form-control mb-3" type="text" name="coverImage" placeholder="URL Image">
+                    <input class="form-control mb-3" type="text" name="coverImage" placeholder="URL Image"
+                        value='<%= article.coverImage %>'>
                     <label>Título</label>
-                    <input class="form-control mb-3" type="text" name="title" value='<%= article.title %>' > 
-                    <textarea class="form-control" placeholder="Escreva seu texto aqui" name="body" id="article" value="<%= article.body%>"></textarea>
+                    <input class="form-control mb-3" type="text" name="title" value='<%= article.title %>'>
+                    <textarea class="form-control" placeholder="Escreva seu texto aqui" name="body"
+                        id="article"> <%- article.body%></textarea>
                     <label class="mt-2">Categoria</label>
                     <select class="form-control" name="category">
                         <% categories.forEach(category=>{ %>
-                        <option value="<%= category.id%>"><%= category.title %> </option>
-                        <%})%>
+                        <option value="<%= category.id%>" <% if(article.categoryId ==category.id){%> selected <%}%>
+                            
+                            ><%= category.title %> </option>
+                            <%})%>
                     </select>
 
                     <button class="btn btn-primary mt-3" type="submit">Criar</button>
                     <div class="msg-erro">
-                        
+
                     </div>
-                
+
                 </form>
             </div>
         </div>
@@ -37,11 +42,11 @@
         const select = document.querySelector('select')
         const msgErro = document.querySelector('.msg-erro')
 
-        form.addEventListener('submit',(e)=>{
+        form.addEventListener('submit', (e) => {
             e.preventDefault()
             // console.log
-            if(inputs[1].value === '' || article.value === '' || select ==='' ){
-                msgErro.innerHTML="Preencha os campos"
+            if (inputs[1].value === '' || article.value === '' || select === '') {
+                msgErro.innerHTML = "Preencha os campos"
             }
         })
 
@@ -49,10 +54,10 @@
 
 
         tinymce.init({
-            selector:'#article',
-            language:'pt_BR',
-            plugins:[
-            'advlist autolink link image  print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
+            selector: '#article',
+            language: 'pt_BR',
+            plugins: [
+                'advlist autolink link image  print preview hr searchreplace wordcount fullscreen insertdatetime media save table paste emoticons'
             ]
 
         })
